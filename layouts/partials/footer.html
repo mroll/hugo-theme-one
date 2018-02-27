@@ -1,10 +1,24 @@
 <footer>
   <!-- <p>© 2017-2018, all rights reserved.</a> -->
-  <script type="text/x-mathjax-config">
-   MathJax.Hub.Config({
-     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-   });
-  </script>
+    <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+     });
+     MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+         var MML = MathJax.ElementJax.mml,
+             TEX = MathJax.InputJax.TeX;
+
+         TEX.Definitions.macros.bfrac = "myBevelFraction";
+
+         TEX.Parse.Augment({
+             myBevelFraction: function (name) {
+                 var num = this.ParseArg(name),
+                     den = this.ParseArg(name);
+                 this.Push(MML.mfrac(num,den).With({bevelled: true}));
+             }
+         });
+     });
+    </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </footer>
 </body>
