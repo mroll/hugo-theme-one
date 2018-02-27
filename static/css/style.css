@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather');
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 body, li p {
-	font-family: 'Merriweather', serif;
+  // font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 h1,h2,h3,h4,h5,h6,header,header.a {
@@ -142,13 +144,13 @@ ul,ol {
 li {
 	line-height: 1.75em;
 	margin-left: 0.75em;
-	list-style-type: none;
+	list-style-type: decimal;
 }
 
 
-table { 
+table {
 	margin-bottom: 1.5em;
-	border-collapse: collapse;
+	// border-collapse: collapse;
 	width: 95%;
 }
 
@@ -156,12 +158,13 @@ table tr + tr {
 	border-top: 1px solid #ccc;
 }
 table td + td {
-	border-left: 1px solid #ccc;
+	// border-left: 1px solid #ccc;
 }
 
 table td {
+  font-family: "Courier New";
 	padding: 0.4em;
-	text-align: center;
+	text-align: left;
 	-moz-hyphens: none;
 	-webkit-hyphens: none;
 	-o-hyphens: none;
@@ -226,6 +229,10 @@ code {
 	hyphens: none;
 }
 
+pre {
+    background-color: #f4f4f5 !important;
+}
+
 figcaption {
 	font-weight: 400;
 	font-style: italic;
@@ -246,5 +253,14 @@ blockquote {
 
 blockquote p {
 	display: inline;
+}
+
+.data {
+  font-family: "Courier New";
+}
+
+.hljs {
+    font-size: 12px;
+    font-family: 'Inconsolata', monospace;
 }
 
